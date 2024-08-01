@@ -85,13 +85,13 @@ main {
 /* Links e botões */
 
 $cor-botao: #2c832d;
-$cor-botao-excluir:  #c42626;
+$cor-botao-excluir: #c42626;
 $cor-botao-confirmacao: #7c7401;
-$cor-botao-chegada:#042b66;
+$cor-botao-chegada: #01378a;
 
-@mixin corBotao($cor){
+@mixin corBotao($cor) {
     background-color: $cor;
-    &:hover{
+    &:hover {
         background-color: darken($cor, 10%);
     }
 }
@@ -104,7 +104,7 @@ input[type="submit"] {
     cursor: pointer;
     border: none;
     margin-left: .25em;
-    @include corBotao($cor-botao)
+    @include corBotao($cor-botao);
 }
 
 input[type="submit"]:disabled,
@@ -124,7 +124,6 @@ a.botao {
     &.oculto {
         visibility: hidden;
     }
-        
     &.confirmacao,
     &.chegada,
     &.iniciar,
@@ -132,25 +131,12 @@ a.botao {
         width: 5.5em;
     }
     &.confirmacao {
-        background-color: $cor-botao-confirmacao;
-        &:hover {
-            background-color: darken($cor-botao-confirmacao, $amount: 10%);
-        }
+        @include corBotao($cor-botao-confirmacao);
     }
-    
-
-    &.oculto {
-        visibility: hidden;
-    }
-
     &.chegada {
-        background-color: $cor-botao-chegada;
-        &:hover {
-            background-color: darken($cor-botao-chegada, $amount: 10%);
-        }
+        @include corBotao($cor-botao-chegada);
     }
 }
-
 
 input[type="button"],
 input[type="submit"] {
