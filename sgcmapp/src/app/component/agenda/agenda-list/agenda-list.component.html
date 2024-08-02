@@ -21,17 +21,20 @@
             <td>{{ item.profissional.unidade.nome }}</td>
             <td>{{ item.convenio?.nome }}</td>
             <td>
-                <a (click)="updateStatus(item.id)"
+                <a href=""
+                (click)="updateStatus(item.id);$event.preventDefault();"
                    class="botao chegada"
                    [ngClass]="{ 'inativo': item.status == 'AGENDADO' }">Chegada</a>
-                <a (click)="updateStatus(item.id)"
+                <a href=""
+                (click)="updateStatus(item.id);$event.preventDefault();"
                    class="botao confirmacao"
                    [ngClass]="{ 'inativo': item.status == 'CONFIRMADO' }">Confirmar</a>
                 <a routerLink="./form"
                    [queryParams]="{id: item.id}"
                    class="botao">Editar</a>
-                <a class="botao excluir"
-                   (click)="delete(item.id)">Cancelar</a>
+                <a href=""
+                class="botao excluir"
+                   (click)="delete(item.id);$event.preventDefault();">Cancelar</a>
             </td>
         </tr>
     </tbody>

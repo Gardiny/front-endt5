@@ -1,3 +1,6 @@
+<a calss="skip-link" [routerLink]="currentUrl" fragment="main">
+    Ir para o conteudo principal
+</a>
 <header>
     <div id="logo">
         <img src="assets/imagens/logo_branco.png" alt="Logo SGCM">
@@ -31,7 +34,7 @@
         </li>
     </ul>
 </nav>
-<main>
+<main id="main">
     <app-alerta></app-alerta>
     <router-outlet></router-outlet>
 </main>

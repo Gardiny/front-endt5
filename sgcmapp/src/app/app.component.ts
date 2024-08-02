@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AlertaComponent } from './component/alerta/alerta.component';
 import { SeletorTemaComponent } from './component/seletor-tema/seletor-tema.component';
 
@@ -16,4 +16,12 @@ import { SeletorTemaComponent } from './component/seletor-tema/seletor-tema.comp
 })
 export class AppComponent {
   title = 'SGCM';
+  currentUrl='';
+  constructor(router: Router){
+    router.events.subscribe(evento => {
+      if (evento instanceof NavigationEnd) {
+        this.currentUrl = evento.url;
+    }
+  })
+}
 }
